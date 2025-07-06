@@ -184,6 +184,61 @@
                 height: 450px;
             }
         }
+        .ranking-container {
+    background: #2b2b2b;
+    border: 1px solid #3f3f3f;
+    border-radius: 8px;
+    padding: 32px 24px;
+    margin-top: 48px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.ranking-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2d2d2d;
+}
+
+.ranking-table thead th {
+    background: #3a3a3a;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: left;
+    color: #f0f0f0;
+    border-bottom: 2px solid #444;
+}
+
+.ranking-table td {
+    padding: 14px;
+    border-bottom: 1px solid #444;
+    color: #ccc;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+
+.ranking-table tr:hover td {
+    background: #383838;
+}
+
+.medal {
+    font-size: 1.2rem;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.gold { color: #FFD700; }
+.silver { color: #C0C0C0; }
+.bronze { color: #CD7F32; }
+
     </style>
 </head>
 
@@ -213,6 +268,57 @@
                     scrolling="auto" allowtransparency="true">
                 </iframe>
             </div>
+            <div class="ranking-container">
+                <h2 class="ranking-title">Classement final</h2>
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Place</th>
+                            <th>Joueur</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="medal gold">🥇</span></td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td><span class="medal silver">🥈</span></td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td><span class="medal bronze">🥉</span></td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td>4e</td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td>5e</td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td>6e</td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td>7e</td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td>8e</td>
+                            <td>?</td>
+                        </tr>
+                        <tr>
+                            <td>9e</td>
+                            <td>?</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
         </div>
 
         <footer class="footer">
