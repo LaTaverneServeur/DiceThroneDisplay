@@ -238,6 +238,45 @@
 .gold { color: #FFD700; }
 .silver { color: #C0C0C0; }
 .bronze { color: #CD7F32; }
+.bracket-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  z-index: 9999;
+  background-color: #111827;
+  display: flex;
+  flex-direction: column;
+}
+.bracket-container.fullscreen iframe {
+  flex-grow: 1;
+  height: 100%;
+}
+.bracket-container {
+  position: relative;
+}
+
+#fullscreen-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #ff9500;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  z-index: 10;
+}
+#fullscreen-btn:hover {
+  background: #e08600;
+}
 
     </style>
 </head>
@@ -262,12 +301,14 @@
                 
             </div>
 
-            <div class="bracket-container">
+            <div class="bracket-container" id="bracket-container">
                 <h2 class="bracket-title">Bracket du tournoi</h2>
-                <iframe src="https://challonge.com/fr/4w2lejn2/module" class="bracket-iframe" frameborder="0"
-                    scrolling="auto" allowtransparency="true">
-                </iframe>
+                <button id="fullscreen-btn" aria-label="Basculer plein écran">Plein écran</button>
+            
+                <iframe src="https://challonge.com/fr/4w2lejn2/module" class="bracket-iframe" frameborder="0" scrolling="auto"
+                    allowtransparency="true"></iframe>
             </div>
+
             <div class="ranking-container">
                 <h2 class="ranking-title">Classement final</h2>
                 <table class="ranking-table">
@@ -325,6 +366,24 @@
             <p>Dice Throne Tournament • Mis à jour en temps réel</p>
         </footer>
     </div>
+    
+    <script>
+    const btn = document.getElementById('fullscreen-btn');
+        const container = document.getElementById('bracket-container');
+
+        function toggleFullscreen() {
+            const isFull = container.classList.toggle('fullscreen');
+            btn.textContent = isFull ? 'Quitter plein écran' : 'Plein écran';
+        }
+
+        // Support click et touchstart (pour tactile)
+        btn.addEventListener('click', toggleFullscreen);
+        btn.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            toggleFullscreen();
+        }, { passive: false });
+
+    </script>
 </body>
 
 </html>
